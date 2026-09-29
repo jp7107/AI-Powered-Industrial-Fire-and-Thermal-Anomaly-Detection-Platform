@@ -1,0 +1,55 @@
+rules:
+  R0_quality_gate:
+    description: "Single detection with low FIRMS confidence, far from facilities, low FRP"
+    conditions:
+      max_pixel_count: 1
+      max_detection_confidence: 0.35
+      min_facility_distance_m: 2000
+      max_peak_frp_mw: 15.0
+    target_class: "other_thermal"
+    support_score: 0.75
+
+  R1_persistent_source:
+    description: "Thermal source match or high persistence days with FRP within baseline"
+    conditions:
+      min_persistence_days: 14
+      max_frp_ratio_baseline: 2.2
+      facility_proximity_boost_m: 1000
+    target_class: "gas_flare_persistent"
+    support_score: 0.90
+
+  R2_industrial_fire:
+    description: "Proximity to industrial facility, high FRP surge or anomaly ratio vs baseline, multi-pixel cluster"
+    conditions:
+      max_facility_distance_m: 1000
+      min_frp_ratio_baseline: 2.8
+      min_peak_frp_mw: 50.0
+      builtup_landcover_threshold: 0.40
+    target_class: "industrial_fire"
+    support_score: 0.92
+
+  R3_mining:
+    description: "Inside quarry/mine polygon, bare ground, moderate persistence"
+    conditions:
+      facility_types: ["mining", "quarry", "coal"]
+      max_facility_distance_m: 1500
+    target_class: "mining_activity"
+    support_score: 0.85
+
+  R4_wildfire:
+    description: "Dense forest cover fraction, far from facilities, rapid cluster growth"
+    conditions:
+      min_forest_fraction: 0.50
+      min_facility_distance_m: 5000
+    target_class: "wildfire_forest"
+    support_score: 0.88
+
+  R5_agricultural_burning:
+    description: "High cropland fraction, afternoon observation peak, short persistence duration"
+    conditions:
+      min_crop_fraction: 0.55
+      max_duration_days: 3
+      min_facility_distance_m: 2000
+      max_peak_frp_mw: 80.0
+    target_class: "agricultural_burning"
+    support_score: 0.82

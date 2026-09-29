@@ -1,0 +1,60 @@
+classes:
+  industrial_fire:
+    label: "Industrial Fire"
+    color: "#FF3B47"
+    icon: "flame"
+    description: "Accidental, uncontrolled fire within or adjacent to industrial facility"
+    prior_weight: 1.0
+
+  gas_flare_persistent:
+    label: "Gas Flare / Persistent"
+    color: "#FF8A1F"
+    icon: "flare"
+    description: "Controlled refinery flare stack or persistent operational thermal source"
+    prior_weight: 0.35
+
+  wildfire_forest:
+    label: "Wildfire / Forest"
+    color: "#22C55E"
+    icon: "tree"
+    description: "Vegetation or forest fire with linear front propagation"
+    prior_weight: 0.70
+
+  agricultural_burning:
+    label: "Agricultural Burning"
+    color: "#F5B82E"
+    icon: "wheat"
+    description: "Crop residue or stubble burning on agricultural cropland"
+    prior_weight: 0.30
+
+  mining_activity:
+    label: "Mining Activity"
+    color: "#A855F7"
+    icon: "pickaxe"
+    description: "Open-cast quarrying or coal seam spontaneous combustion"
+    prior_weight: 0.40
+
+  other_thermal:
+    label: "Other / Unknown"
+    color: "#B8C0CC"
+    icon: "help-circle"
+    description: "Unclassified thermal anomaly or low-quality detection"
+    prior_weight: 0.15
+
+risk_levels:
+  critical:
+    min_score: 80
+    color: "#EF3340"
+    label: "Critical Risk"
+  high:
+    min_score: 60
+    color: "#FF8A1F"
+    label: "High Risk"
+  medium:
+    min_score: 40
+    color: "#F5B82E"
+    label: "Medium Risk"
+  low:
+    min_score: 0
+    color: "#22B8CF"
+    label: "Low Risk"
