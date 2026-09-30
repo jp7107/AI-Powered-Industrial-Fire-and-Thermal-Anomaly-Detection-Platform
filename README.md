@@ -16,15 +16,15 @@
 ## 📸 Dashboard Interface
 
 <p align="center">
-  <img src="./frontend%20dashboard%20demo.png" alt="ThermoWatch Main Dashboard" width="49%">
+  <img src="./dashboard-main.png" alt="ThermoWatch Main Dashboard" width="49%">
   &nbsp;
-  <img src="./frontend%20dashboard%20demo2.png" alt="ThermoWatch Analytics Dashboard" width="49%">
+  <img src="./dashboard-analytics.png" alt="ThermoWatch Analytics Dashboard" width="49%">
 </p>
 
 <p align="center">
   <br/>
   <i>Developed for the Smart India Hackathon</i><br/><br/>
-  <img src="https://www.sih.gov.in/img/logo.png" alt="Smart India Hackathon Logo" width="250"/>
+  <img src="./sih_logo.png" alt="Smart India Hackathon Logo" width="250"/>
 </p>
 
 ---
